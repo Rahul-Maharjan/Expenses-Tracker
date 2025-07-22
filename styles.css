@@ -223,20 +223,20 @@ body {
 .expense-title {
   font-weight: 600;
   font-size: 1rem;
-  color: #333;
+  color: var(--text-color);
   margin: 0;
 }
 
 .expense-amount {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #3a86ff;
+  color: var(--primary-color);
   margin: 0;
 }
 
 .expense-date {
   font-size: 0.8rem;
-  color: #666;
+  color: var(--secondary-text);
   margin: 0;
 }
 
@@ -246,7 +246,8 @@ body {
   gap: 0.5rem;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -259,7 +260,7 @@ body {
 }
 
 .edit-btn {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .edit-btn:hover {
@@ -275,7 +276,8 @@ body {
 }
 
 /* SVG Icons */
-.edit-btn svg, .delete-btn svg {
+.edit-btn svg,
+.delete-btn svg {
   display: block;
 }
 
