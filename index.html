@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="./animations.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <div class="header-left">
+          <div class="icon">
+            <svg
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2>Expense Tracker</h2>
+        </div>
+        <div class="header-right">
+          <label class="theme-toggle">
+            <input type="checkbox" id="themeSwitch" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="form-section">
+          <h2>Add Expense</h2>
+          <form id="expense-form">
+            <label>
+              <span>Expense Title</span>
+              <input
+                id="title"
+                type="text"
+                placeholder="Enter expense title"
+                required
+              />
+            </label>
+            <label>
+              <span>Amount</span>
+              <input
+                id="amount"
+                type="number"
+                placeholder="Enter amount"
+                required
+              />
+            </label>
+            <label>
+              <span>Date</span>
+              <input id="date" type="date" required />
+            </label>
+            <button type="submit">Add Expense</button>
+          </form>
+        </section>
+
+        <section class="expenses-section">
+          <h2>Expenses</h2>
+          <ul id="expense-list"></ul>
+          <h3 class="total-amount">
+            Total: ₹<span id="total-amount">0.00</span>
+          </h3>
+          <div class="pagination" id="pagination-controls">
+            <button class="pagination button" id="prev-page">Prev</button>
+            <span id="current-page">1</span>
+            <button class="pagination button" id="next-page">Next</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
